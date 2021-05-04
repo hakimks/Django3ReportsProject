@@ -34,7 +34,7 @@ class Sale(models.Model):
 
     def save(self, *args, **kwargs):
         if self.transaction_id == "":
-            self.transaction_id = generate_code
+            self.transaction_id = generate_code()
         
         if self.created is None:
             self.created = timezone.now()
